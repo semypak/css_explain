@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>grid 이해하기</title>
+    <style>
+      li {
+        list-style-type: none;
+        /* margin: 0.5rem; */
+      }
+      /* auto-fit은 비어있는 공간을 다 채우려고 하고,
+      auto-fill은 비어있는 공간을 남겨둠. 화면이 넓어지면 차이점을 알수 있으나
+      좁아지면 차이점이 잘 보이지 않는다.*/
+      .col {
+        display: grid;
+        /* grid-template-columns: repeat(4, 1fr); */
+        /* grid-template-columns: repeat(4, minmax(150px, 1fr)); */
+        /* grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); */
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+      }
+      .row {
+        background-color: dodgerblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid">
+      <ul class="col">
+        <li class="row">item1</li>
+        <li class="row">item2</li>
+        <li class="row">item3</li>
+        <li class="row">item4</li>
+        <li class="row">item5</li>
+        <!-- <li class="row">item6</li>
+        <li class="row">item7</li>
+        <li class="row">item8</li>
+        <li class="row">item9</li>
+        <li class="row">item10</li>
+        <li class="row">item11</li>
+        <li class="row">item12</li>
+        <li class="row">item13</li> -->
+      </ul>
+    </div>
+  </body>
+</html>
